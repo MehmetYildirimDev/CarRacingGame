@@ -58,6 +58,8 @@ public class CarController : MonoBehaviour
         GetInputs();
         AnimateWheels();
         WheelEffects();
+        FrontLightButton();
+        Debug.Log("Hiz: " + carRb.velocity.magnitude.ToString("00"));
     }
 
     void LateUpdate()
@@ -115,8 +117,8 @@ public class CarController : MonoBehaviour
                 wheel.wheelCollider.brakeTorque = 300 * brakeAcceleration * Time.deltaTime;
             }
 
-        //    carLights.isBackLightOn = true;
-        //    carLights.OperateBackLights();
+            carLights.isBackLightOn = true;
+            carLights.OperateBackLights();
         }
         else
         {
@@ -125,8 +127,8 @@ public class CarController : MonoBehaviour
                 wheel.wheelCollider.brakeTorque = 0;
             }
 
-        //    carLights.isBackLightOn = false;
-        //    carLights.OperateBackLights();
+            carLights.isBackLightOn = false;
+            carLights.OperateBackLights();
         }
     }
 
@@ -157,6 +159,14 @@ public class CarController : MonoBehaviour
             {
                 wheel.wheelEffectObj.GetComponentInChildren<TrailRenderer>().emitting = false;
             }
+        }
+    }
+
+    void FrontLightButton()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            carLights.OperateFrontLights();
         }
     }
 }

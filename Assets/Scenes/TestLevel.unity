@@ -451,6 +451,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4670164830880778185, guid: 2de0895802a0fa94da5a34e12b61f565, type: 3}
+      propertyPath: m_Intensity
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5776708411556842860, guid: 2de0895802a0fa94da5a34e12b61f565, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3468,6 +3472,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4670164830880778185, guid: 2de0895802a0fa94da5a34e12b61f565, type: 3}
+      propertyPath: m_Intensity
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5776708411556842860, guid: 2de0895802a0fa94da5a34e12b61f565, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4408,19 +4416,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e83152c534e0409488d59f5a42f594f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFrontLightOn: 0
+  isBackLightOn: 0
+  frontLightOnColor: {r: 0.9971571, g: 1, b: 0.61698115, a: 1}
+  frontLightOffColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  backLightOnColor: {r: 1, g: 0, b: 0, a: 1}
+  backLightOffColor: {r: 0.4, g: 0, b: 0, a: 1}
   lights:
   - LightObj: {fileID: 1274420548}
-    LightMaterial: {fileID: 0}
+    LightMaterial: {fileID: 2100000, guid: e0765e9e0eafbfb4089bc8497a597f0f, type: 2}
     side: 0
   - LightObj: {fileID: 136202998}
-    LightMaterial: {fileID: 0}
+    LightMaterial: {fileID: 2100000, guid: e0765e9e0eafbfb4089bc8497a597f0f, type: 2}
     side: 0
   - LightObj: {fileID: 1013059273}
     LightMaterial: {fileID: 2100000, guid: e4d4c7f6336b9884888b93d73a476f88, type: 2}
-    side: 0
+    side: 1
   - LightObj: {fileID: 2077588534}
     LightMaterial: {fileID: 2100000, guid: e4d4c7f6336b9884888b93d73a476f88, type: 2}
-    side: 0
+    side: 1
 --- !u!1 &482723237948813006
 GameObject:
   m_ObjectHideFlags: 0
