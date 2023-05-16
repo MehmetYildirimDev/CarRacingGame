@@ -64,9 +64,10 @@ public class CarController : MonoBehaviour
 
     void LateUpdate()
     {
+        Brake();
         Move();
         Steer();
-        Brake();
+        
     }
 
     public void MoveInput(float input)
