@@ -1,3 +1,5 @@
 Benzin alam sistemi olabilir 
 tekerlek yenileme sistemi olabilir 
 sureye karsi yaris olabilir
+Park etme modu
+turbo modu olabilir.

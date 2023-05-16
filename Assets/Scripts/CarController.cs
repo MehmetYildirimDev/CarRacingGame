@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 using System;
 using System.Collections.Generic;
 
@@ -45,6 +46,8 @@ public class CarController : MonoBehaviour
 
     private CarLights carLights;
 
+    //public TMP_Text SpeedText;
+
     void Start()
     {
         carRb = GetComponent<Rigidbody>();
@@ -59,15 +62,22 @@ public class CarController : MonoBehaviour
         AnimateWheels();
         WheelEffects();
         FrontLightButton();
-        Debug.Log("Hiz: " + carRb.velocity.magnitude.ToString("00"));
+        //Debug.Log("Hiz: " + carRb.velocity.magnitude.ToString("00"));
+        //SpeedText.text = (carRb.velocity.magnitude * 4).ToString("00");
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetTransfrom();
+        }
     }
 
     void LateUpdate()
     {
+
         Brake();
         Move();
         Steer();
-        
+
     }
 
     public void MoveInput(float input)
@@ -169,5 +179,18 @@ public class CarController : MonoBehaviour
         {
             carLights.OperateFrontLights();
         }
+    }
+
+    public Transform ResetPosition;
+
+    void ResetTransfrom()
+    {
+        transform.position = ResetPosition.position;
+        transform.rotation = ResetPosition.rotation;
+
+        carRb.velocity = Vector3.zero;
+
+        //transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
+
     }
 }
