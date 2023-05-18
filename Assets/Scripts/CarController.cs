@@ -42,11 +42,11 @@ public class CarController : MonoBehaviour
     float moveInput;
     float steerInput;
 
-    private Rigidbody carRb;
+    public Rigidbody carRb;
 
     private CarLights carLights;
 
-    //public TMP_Text SpeedText;
+    public TMP_Text SpeedText;
 
     void Start()
     {
@@ -63,7 +63,7 @@ public class CarController : MonoBehaviour
         WheelEffects();
         FrontLightButton();
         //Debug.Log("Hiz: " + carRb.velocity.magnitude.ToString("00"));
-        //SpeedText.text = (carRb.velocity.magnitude * 4).ToString("00");
+        SpeedText.text = (carRb.velocity.magnitude * 4).ToString("00");
 
         if (Input.GetKeyDown(KeyCode.R))
         {
