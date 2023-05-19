@@ -111,7 +111,7 @@ public class FuelModeManager : MonoBehaviour
     {
         // Oyunu bitirme veya baþka bir iþlem yapma
         //surtunme vererek durmasini sagliyoruz
-        Player.GetComponent<CarController>().carRb.drag = 5f;
+        Player.GetComponent<CarController>().carRb.drag = 1f;
 
     }
 
