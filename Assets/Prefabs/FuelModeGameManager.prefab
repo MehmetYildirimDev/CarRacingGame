@@ -49,6 +49,10 @@ MonoBehaviour:
   startingFuel: 100
   FuelDecreaseSpeed: 1
   FuelIncreaseAmount: 20
-  RepeatRate: 0.25
+  RepeatRate: 0.1
   FuelText: {fileID: 0}
   CoinText: {fileID: 0}
+  PlayOnPanel: {fileID: 0}
+  PausePanel: {fileID: 0}
+  WinPanel: {fileID: 0}
+  LostPanel: {fileID: 0}

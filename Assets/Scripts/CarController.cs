@@ -191,6 +191,16 @@ public class CarController : MonoBehaviour
         carRb.velocity = Vector3.zero;
 
         //transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
-
     }
+    public void ForGameFinish()
+    {
+
+        carRb.drag = 5f;
+        carRb.angularDrag = 5f;
+
+        
+        GetComponent<AudioSource>().volume = 0.1f;
+        GetComponent<CarController>().enabled = false;
+    }
+
 }
