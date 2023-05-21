@@ -9,7 +9,7 @@ public class FuelModeManager : MonoBehaviour
 
     public static FuelModeManager instance;//Singleton yapiyoz
 
-    GameObject Player;
+    [SerializeField] private GameObject Player;
     public TMP_Text CountdownText;
     public float StartingTime = 2f;
 
@@ -33,7 +33,6 @@ public class FuelModeManager : MonoBehaviour
     {
 
         instance = this;
-        Player = GameObject.Find("PlayerCar");
 
         StartingRate = StartingTime;
     }
@@ -111,7 +110,7 @@ public class FuelModeManager : MonoBehaviour
     {
         // Oyunu bitirme veya baþka bir iþlem yapma
         //surtunme vererek durmasini sagliyoruz
-        Player.GetComponent<CarController>().carRb.drag = 1f;
+        Player.GetComponent<CarController>().carRb.drag = 2f;
 
     }
 

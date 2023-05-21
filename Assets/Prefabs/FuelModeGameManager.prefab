@@ -43,11 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891aa9df1b6cf5745b38534e2039b30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   CountdownText: {fileID: 0}
   StartingTime: 2
   startingFuel: 100
   FuelDecreaseSpeed: 1
   FuelIncreaseAmount: 20
-  RepeatRate: 0.1
+  RepeatRate: 0.25
   FuelText: {fileID: 0}
   CoinText: {fileID: 0}
