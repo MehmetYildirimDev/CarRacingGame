@@ -84875,6 +84875,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1121348565}
     - target: {fileID: 1644118050820374672, guid: 49c8bc723d2b13d42ac7dc51d756e463, type: 3}
+      propertyPath: CarSpeedText
+      value: 
+      objectReference: {fileID: 2096271423}
+    - target: {fileID: 1644118050820374672, guid: 49c8bc723d2b13d42ac7dc51d756e463, type: 3}
       propertyPath: CountdownText
       value: 
       objectReference: {fileID: 327795856}
@@ -85223,7 +85227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698033985661092047, guid: cf61eabf70d84a749acfb229d28a8abb, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: CanvasFuelMode
       objectReference: {fileID: 0}
     - target: {fileID: 7698033985794342560, guid: cf61eabf70d84a749acfb229d28a8abb, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target

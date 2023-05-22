@@ -194,13 +194,14 @@ GameObject:
   - component: {fileID: 3236751984038658816}
   - component: {fileID: 3236751984038658817}
   - component: {fileID: 3236751984038658830}
+  - component: {fileID: 2078411410}
   m_Layer: 0
   m_Name: PlayerCarRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2855440954332682677
 Transform:
   m_ObjectHideFlags: 0
@@ -271,6 +272,8 @@ MonoBehaviour:
     wheelEffectObj: {fileID: 3567503534005569857}
     smokeParticle: {fileID: 3567503535065580632}
     axel: 1
+  carRb: {fileID: 0}
+  ResetPosition: {fileID: 0}
 --- !u!114 &3236751984038658816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +417,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!208 &2078411410
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3236751984038658831}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.5, y: 1.5, z: 6.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &3567503533755412435
 GameObject:
   m_ObjectHideFlags: 0

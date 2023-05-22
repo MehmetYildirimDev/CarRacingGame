@@ -4043,7 +4043,7 @@ GameObject:
   - component: {fileID: 7698033985661092045}
   - component: {fileID: 7698033985661092044}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasFuelMode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

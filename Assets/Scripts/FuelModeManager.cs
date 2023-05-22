@@ -33,6 +33,7 @@ public class FuelModeManager : MonoBehaviour
     [SerializeField] private GameObject WinPanel;
     [SerializeField] private GameObject LostPanel;
 
+    public TMP_Text CarSpeedText;
 
     private void Awake()
     {
@@ -54,7 +55,7 @@ public class FuelModeManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(GeriSayimBaslat());
+        StartCoroutine(StartCountDown());
 
         Fuel = startingFuel;
         CoinCount = 0;
@@ -76,10 +77,16 @@ public class FuelModeManager : MonoBehaviour
         FuelText.text = "Fuel: " + Fuel.ToString("F0");
     }
 
+    private void UpdateCarSpeedUI()
+    {
+        CarSpeedText.text = (Player.GetComponent<Rigidbody>().velocity.magnitude * 4).ToString("00");
+    }
+
     private void ReduceFuel()
     {
         Fuel -= FuelDecreaseSpeed;
         UpdateFuelUI();
+        UpdateCarSpeedUI();
 
         if (Fuel <= 0f)
         {
@@ -100,18 +107,18 @@ public class FuelModeManager : MonoBehaviour
         UpdateCoinUI();
     }
 
-    IEnumerator GeriSayimBaslat()
+    IEnumerator StartCountDown()
     {
 
         Player.GetComponent<CarController>().enabled = false;
 
-        float kalanSure = StartingTime;
+        float remainingTime = StartingTime;
 
-        while (kalanSure > 0)
+        while (remainingTime > 0)
         {
-            CountdownText.text = kalanSure.ToString("F0");
+            CountdownText.text = remainingTime.ToString("F0");
             yield return new WaitForSeconds(1f);
-            kalanSure--;
+            remainingTime--;
         }
 
         Player.GetComponent<CarController>().enabled = true;

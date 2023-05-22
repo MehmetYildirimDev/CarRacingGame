@@ -10,11 +10,36 @@ public class CarDriverAi : MonoBehaviour
     public float distance;
     public const float OFFSETDISTANCE = 10f;
     public int index;
+
+
+
     void Start()
     {
+        StartCoroutine(StartCountDown());
         index = 0;
         agent = GetComponent<NavMeshAgent>();
+    }
+
+
+
+
+    IEnumerator StartCountDown()
+    {
+
+        GetComponent<CarDriverAi>().enabled = false;
+
+        float kalanSure = RaceModeGameManager.instance.StartingTime;
+
+        while (kalanSure > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            kalanSure--;
+        }
+
+        GetComponent<CarDriverAi>().enabled = true;
+
         agent.SetDestination(checkpoints[index].position);
+        // Geri sayým tamamlandýktan sonra yapýlacak iþlemleri buraya ekleyebilirsiniz
     }
 
 
@@ -25,7 +50,7 @@ public class CarDriverAi : MonoBehaviour
         if (distance < OFFSETDISTANCE)
         {
 
-            if (index < checkpoints.Length-1)
+            if (index < checkpoints.Length - 1)
             {
                 index++;
             }
