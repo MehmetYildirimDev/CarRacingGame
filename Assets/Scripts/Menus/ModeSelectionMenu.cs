@@ -20,4 +20,9 @@ public class ModeSelectionMenu : MonoBehaviour
     {
         SceneManager.LoadScene("FuelModeScene");
     }
+
+    public void OnClick_CarSelection()
+    {
+        SceneManager.LoadScene("CarSelection");
+    }
 }

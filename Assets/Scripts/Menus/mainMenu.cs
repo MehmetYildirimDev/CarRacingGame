@@ -18,11 +18,7 @@ public class mainMenu : MonoBehaviour
 
     public void OnClick_Play()
     {
-        print("Mode Selection");
-        //TODO: mode selection Scene;
-        //SceneManager.LoadScene("LevelSelection");
-
-        MenuManager.OpenMenu(Menu.MODESELECTION, gameObject);
+        SceneManager.LoadScene("CarSelection");
     }
 
     public void onClick_Exit()
