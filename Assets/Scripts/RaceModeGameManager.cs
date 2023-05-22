@@ -81,9 +81,11 @@ public class RaceModeGameManager : MonoBehaviour
         CarSpeedText.text = (Player.GetComponent<Rigidbody>().velocity.magnitude * 4).ToString("F0");
     }
 
-    private void GameOver()
+    public void GameOver()
     {
         Player.GetComponent<CarController>().ForGameFinish();
+
+
 
         LostPanelOn();
     }
@@ -130,6 +132,8 @@ public class RaceModeGameManager : MonoBehaviour
     {
         PlayOnPanel.SetActive(false);
         LostPanel.SetActive(true);
+        LostPanel.transform.Find("OrderText (TMP)").GetComponent<TMP_Text>().text =
+            arabalar.IndexOf(Player).ToString() + " Sirada Bitirdiniz.";
     }
 
 
@@ -142,7 +146,9 @@ public class RaceModeGameManager : MonoBehaviour
         for (int i = 0; i < arabalar.Count; i++)
         {
 
-            RankingListText[i].text = (i + 1) + ". " + arabalar[i].GetComponent<RaceInfo>().LabelName;
+            RankingListText[i].text = (i + 1) + ". " + arabalar[i].GetComponent<RaceInfo>().LabelName + 
+                " ("+ arabalar[i].GetComponent<RaceInfo>().GetTourCount() +
+                "/"+ MaxTourCount+ ")" ;
             RankingListText[i].color = arabalar[i].GetComponent<RaceInfo>().TextColor;
         }
 

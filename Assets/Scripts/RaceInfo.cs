@@ -20,7 +20,7 @@ public class RaceInfo : MonoBehaviour
 
     void Start()
     {
-        TourInfo = -1;
+        TourInfo = 0;
 
         if (GetComponent<NavMeshAgent>() == null)
         {
@@ -35,17 +35,17 @@ public class RaceInfo : MonoBehaviour
 
     }
 
-    private void YolHesaplamaAi()
-    {
-        print(this.gameObject.name + ": " + agent.velocity.magnitude);
-        AlinanYol += agent.velocity.magnitude;
-    }
+    //private void YolHesaplamaAi()
+    //{
+    //    print(this.gameObject.name + ": " + agent.velocity.magnitude);
+    //    AlinanYol += agent.velocity.magnitude;
+    //}
 
-    private void YolHesaplama()
-    {
-        print(this.gameObject.name + ": " + playerCarRb.velocity.magnitude);
-        AlinanYol += playerCarRb.velocity.magnitude;
-    }
+    //private void YolHesaplama()
+    //{
+    //    print(this.gameObject.name + ": " + playerCarRb.velocity.magnitude);
+    //    AlinanYol += playerCarRb.velocity.magnitude;
+    //}
 
     private void Update()
     {
@@ -76,10 +76,12 @@ public class RaceInfo : MonoBehaviour
             if (this.gameObject.CompareTag("Player"))
             {
                 print("Win");
+                RaceModeGameManager.instance.GameWin();
             }
             else
             {
                 print("Lose");
+                RaceModeGameManager.instance.GameOver();
             }
         }
     }
@@ -90,5 +92,10 @@ public class RaceInfo : MonoBehaviour
 
         // Cooldown süresi bitti, tekrar artýrmaya izin ver
         cooldownActive = false;
+    }
+
+    public int GetTourCount()
+    {
+        return TourInfo;
     }
 }

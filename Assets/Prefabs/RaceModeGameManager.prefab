@@ -61,5 +61,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  MaxTourCount: 1
+  MaxTourCount: 4
   StartingPointcooldownTime: 10
