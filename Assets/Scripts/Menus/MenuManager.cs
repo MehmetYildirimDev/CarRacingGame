@@ -6,14 +6,13 @@ public static class MenuManager
 {
     //public static bool IsInitialised { get; private set;}
     public static bool IsInitialised;
-    public static GameObject mainMenu, settingsMenu, modeSelectionMenu;
+    public static GameObject mainMenu, settingsMenu;
     public static void Init()
     {
         GameObject Canvas = GameObject.Find("Canvas");//safearea = canvas
 
         mainMenu = Canvas.transform.Find("MainMenu").gameObject;
         settingsMenu = Canvas.transform.Find("SettingsMenu").gameObject;
-        modeSelectionMenu = Canvas.transform.Find("ModeSelectionMenu").gameObject;
 
         IsInitialised = true;
     }
@@ -30,9 +29,6 @@ public static class MenuManager
                 break;
             case Menu.SETTINGS:
                 settingsMenu.SetActive(true);
-                break;
-            case Menu.MODESELECTION:
-                modeSelectionMenu.SetActive(true);
                 break;
             default:
                 break;
