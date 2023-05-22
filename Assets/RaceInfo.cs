@@ -5,44 +5,60 @@ using UnityEngine.AI;
 
 public class RaceInfo : MonoBehaviour
 {
+    public string LabelName;
 
     private NavMeshAgent agent;
-    private Rigidbody PlayerCarRg;
+    private Rigidbody playerCarRb;
     public double AlinanYol;
 
     [SerializeField] private int TourInfo;
 
     bool cooldownActive = false; // Cooldown süresi aktif mi?
 
-    // Start is called before the first frame update
+
+    public Color TextColor;
+
     void Start()
     {
         TourInfo = -1;
 
         if (GetComponent<NavMeshAgent>() == null)
         {
-            PlayerCarRg = GetComponent<Rigidbody>();
-            InvokeRepeating("YolHesaplama", 3f, 0.25f);
+            playerCarRb = GetComponent<Rigidbody>();
+            //InvokeRepeating("YolHesaplama", 3f, 0.1f);
         }
         else
         {
             agent = GetComponent<NavMeshAgent>();
-            InvokeRepeating("YolHesaplamaAi", 3f, 0.25f);
+            //InvokeRepeating("YolHesaplamaAi", 3f, 0.1f);
         }
 
     }
 
     private void YolHesaplamaAi()
     {
+        print(this.gameObject.name + ": " + agent.velocity.magnitude);
         AlinanYol += agent.velocity.magnitude;
     }
 
     private void YolHesaplama()
     {
-        AlinanYol += PlayerCarRg.velocity.magnitude;
+        print(this.gameObject.name + ": " + playerCarRb.velocity.magnitude);
+        AlinanYol += playerCarRb.velocity.magnitude;
     }
 
-    
+    private void Update()
+    {
+        if (agent == null)
+        {
+            AlinanYol += playerCarRb.velocity.magnitude;
+        }
+        else
+        {
+            AlinanYol += agent.velocity.magnitude;
+        }
+    }
+
     public void TourCountIncrease()
     {
         if (!cooldownActive)

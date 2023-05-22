@@ -22,6 +22,7 @@ public class RaceModeGameManager : MonoBehaviour
     [SerializeField] private GameObject LostPanel;
 
     public List<GameObject> arabalar = new List<GameObject>();
+    public List<TMP_Text> RankingListText = new List<TMP_Text>();
 
     public int MaxTourCount;
 
@@ -140,7 +141,9 @@ public class RaceModeGameManager : MonoBehaviour
 
         for (int i = 0; i < arabalar.Count; i++)
         {
-            Debug.Log((i + 1) + ". sýrada: " + arabalar[i] + "  " + arabalar[i].GetComponent<RaceInfo>().AlinanYol);
+
+            RankingListText[i].text = (i + 1) + ". " + arabalar[i].GetComponent<RaceInfo>().LabelName;
+            RankingListText[i].color = arabalar[i].GetComponent<RaceInfo>().TextColor;
         }
 
     }

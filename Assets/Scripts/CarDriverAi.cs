@@ -11,8 +11,6 @@ public class CarDriverAi : MonoBehaviour
     public const float OFFSETDISTANCE = 10f;
     public int index;
 
-
-
     void Start()
     {
         StartCoroutine(StartCountDown());
@@ -61,6 +59,7 @@ public class CarDriverAi : MonoBehaviour
             agent.SetDestination(checkpoints[index].position);
         }
 
+        
     }
 
 
