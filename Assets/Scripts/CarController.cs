@@ -46,7 +46,7 @@ public class CarController : MonoBehaviour
 
     private CarLights carLights;
 
-    
+
 
     void Start()
     {
@@ -63,12 +63,13 @@ public class CarController : MonoBehaviour
         WheelEffects();
         FrontLightButton();
         //Debug.Log("Hiz: " + carRb.velocity.magnitude.ToString("00"));
-        
 
+        /*
         if (Input.GetKeyDown(KeyCode.R))
         {
             ResetTransfrom();
         }
+        */
     }
 
     void LateUpdate()
@@ -181,8 +182,9 @@ public class CarController : MonoBehaviour
         }
     }
 
+    /*
+     
     public Transform ResetPosition;
-
     void ResetTransfrom()
     {
         transform.position = ResetPosition.position;
@@ -192,13 +194,15 @@ public class CarController : MonoBehaviour
 
         //transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
     }
+
+    */
     public void ForGameFinish()
     {
 
         carRb.drag = 5f;
         carRb.angularDrag = 5f;
 
-        
+
         GetComponent<AudioSource>().volume = 0.1f;
         GetComponent<CarController>().enabled = false;
     }

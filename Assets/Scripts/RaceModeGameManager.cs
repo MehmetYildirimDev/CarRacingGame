@@ -78,7 +78,7 @@ public class RaceModeGameManager : MonoBehaviour
 
     private void UpdateCarSpeedUI()
     {
-        CarSpeedText.text = (Player.GetComponent<Rigidbody>().velocity.magnitude * 4).ToString("F0");
+        CarSpeedText.text = (Player.GetComponent<Rigidbody>().velocity.magnitude * 4).ToString("F0") + " km/s";
     }
 
     public void GameOver()
@@ -101,6 +101,7 @@ public class RaceModeGameManager : MonoBehaviour
     public void Pause_Onclick()
     {
         PlayOnPanel.SetActive(false);
+        Player.GetComponent<AudioSource>().mute = true;
         Time.timeScale = 0f;
         PausePanel.SetActive(true);
     }
@@ -109,6 +110,7 @@ public class RaceModeGameManager : MonoBehaviour
     {
         PausePanel.SetActive(false);
         Time.timeScale = 1f;
+        Player.GetComponent<AudioSource>().mute = false;
         PlayOnPanel.SetActive(true);
     }
 
