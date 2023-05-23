@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FuelTankScript : MonoBehaviour
 {
-
+    [SerializeField]private AudioClip audioClip;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +20,7 @@ public class FuelTankScript : MonoBehaviour
         Destroy(this.gameObject);
 
         FuelModeManager.instance.GetFuel();
+        SoundManager.instance.PlaySound(audioClip);
     }
 
 }

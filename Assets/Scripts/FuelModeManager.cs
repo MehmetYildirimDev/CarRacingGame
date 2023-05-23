@@ -79,7 +79,7 @@ public class FuelModeManager : MonoBehaviour
 
     private void UpdateCarSpeedUI()
     {
-        CarSpeedText.text = (Player.GetComponent<Rigidbody>().velocity.magnitude * 4).ToString("00");
+        CarSpeedText.text = (Player.GetComponent<Rigidbody>().velocity.magnitude * 4).ToString("00") + " km/s";
     }
 
     private void ReduceFuel()
